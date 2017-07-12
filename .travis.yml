@@ -1,0 +1,16 @@
+language: python
+sudo: required
+dist: precise
+python:
+  - "3.6"
+#before build action
+before_script:
+  - chmod a+x ./scripts/create-aws-profile.sh
+#build action
+script:
+  - ./scripts/create-aws-profile.sh
+#install any dependencies before "script" section is fired
+install:
+  - pip install --upgrade awsebcli
+  - export PATH=~/.local/bin:$PATH
+  - eb --version

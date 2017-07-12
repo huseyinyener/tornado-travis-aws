@@ -10,5 +10,5 @@ aws_secret_access_key = ${AWS_PRIVATE_KEY}
 EOL
 
 cd src
-eb init sample-eb-app --region us-west-2 --profile eb-tornado-profile
+eb init [BEANSTALK_APPLICATION_NAME_WILL_BE_HERE] --region us-west-2 --profile eb-tornado-profile
 eb deploy
